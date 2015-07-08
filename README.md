@@ -29,10 +29,10 @@ In [statsd] directory update `config.js` with your Databox token:
 
 Pushing data to [statsd]:
 
-    # Counter
+    # Counter example
     echo "databox.counters.example:100|c" | nc -u -w0 127.0.0.1 8125
 
-    # Timer
+    # Timer example
     echo "upload.timer:600|ms|@0.1" | nc -u -w0 127.0.0.1 8125
 
 [databox-statsd] currently supports **only** `counters` and `timers.
