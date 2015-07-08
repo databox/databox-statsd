@@ -25,6 +25,7 @@
     "node": ">=0.10"
   },
   "dependencies": {
+    "moment": "*",
     "databox": "databox/databox-js#master"
   },
   "devDependencies": {
@@ -32,7 +33,7 @@
     "jshint": "*"
   },
   "scripts": {
-    "pretest": "jshint databox-statsd test *.js",
+    "pretest": "jshint databox-statsd test",
     "test": "mocha"
   }
 }

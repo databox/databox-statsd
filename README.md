@@ -6,13 +6,22 @@ Pluggable backend for [StatsD][statsd], which publishes stats to [Databox].
 
 ## Installing
 
-Change statsd `config.js`:
+Clone repository this repository,...
+
+    git clone https://github.com/databox/databox-statsd.git
+    cd databox-statsd
+    npm install --production
+
+Change to statsd directory and update `config.js` with your Databox token:
 
 ```javascript
 {
+    databox: {
+        push_token: '<your databox push token>'
+    },
     backends: [
         "./backends/graphite",
-        ".<path to this repo>/databox-statsd.js",
+        "... path to databox-statsd ... /databox-statsd.js",
     ],
     // ...
 }

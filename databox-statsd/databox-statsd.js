@@ -1,21 +1,23 @@
 var util = require('util'),
-    Databox = require('databox');
+    Databox = require('databox'),
+    moment = require('moment');
 
-var d = new Databox({
-    push_token: 'token'
-});
+var debug, l, databox;
 
-d.push({
-    key: 'js.test.me',
-    value: 123
-}, function(result){
-    console.log(result);
-});
+var flush_stats = function databox_flush(ts, metrics) {
+    var dbDate = moment(new Date(ts*1000)).format("YYYY-MM-DD H:mm:ss");
+    console.log("--- flush_stats --- --- ---");
+    console.log(metrics);
+};
 
+var databox_init = function(startup_time, config, events, logger) {
+    debug = config.debug;
+    l = logger;
+    databox = new Databox((config.databox || {}));
 
-util.log("hey hey,...");
-
-exports.init = function databox_init(startup_time, config, events) {
+    events.on('flush', flush_stats);
 
     return true;
 };
+
+module.exports.init = databox_init;
