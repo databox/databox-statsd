@@ -30,7 +30,8 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "jshint": "*"
+    "jshint": "*",
+    "node-inspector": "*"
   },
   "scripts": {
     "pretest": "jshint databox-statsd test",
