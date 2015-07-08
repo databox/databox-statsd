@@ -1,0 +1,38 @@
+{
+  "name": "databox-statsd",
+  "version": "0.1.0",
+  "description": "Pluggable backend for statsd, which publishes stats to Databox.",
+  "main": "databox-statsd/databox-statsd.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/databox/databox-statsd.git"
+  },
+  "keywords": [
+    "statsd",
+    "metrics",
+    "databox"
+  ],
+  "author": "Oto Brglez <otobrglez@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/databox/databox-statsd/issues"
+  },
+  "homepage": "https://github.com/databox/databox-statsd",
+  "engine": {
+    "node": ">=0.10"
+  },
+  "dependencies": {
+    "databox": "databox/databox-js#master"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "jshint": "*"
+  },
+  "scripts": {
+    "pretest": "jshint databox-statsd test *.js",
+    "test": "mocha"
+  }
+}
